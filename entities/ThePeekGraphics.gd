@@ -4,7 +4,7 @@ extends Node3D
 
 
 @export var DistanceBeforeStep := 0.8
-const stepTime := 0.025
+const stepTime := 0.05
 var normal
 var stepping = false
 @onready var previousGlobalPos = global_position
