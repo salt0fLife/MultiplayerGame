@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://citrillriidcb"]
+
+[ext_resource type="Script" path="res://gui/multiplayer_menu.gd" id="1_bu1ho"]
+
+[node name="MultiplayerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bu1ho")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.447059, 0.392157, 0.454902, 1)
+
+[node name="output" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1058.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -33.0
+offset_right = 75.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JoinExistingGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join Existing Game"
+
+[node name="HostGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "ipv4 (only for join)"
+
+[connection signal="button_down" from="VBoxContainer/JoinExistingGame" to="." method="_on_join_existing_game_button_down"]
+[connection signal="button_down" from="VBoxContainer/HostGame" to="." method="_on_host_game_button_down"]

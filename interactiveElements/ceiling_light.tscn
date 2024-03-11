@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtjdesgiamnkx"]
+
+[ext_resource type="Script" path="res://interactiveElements/ceiling_light.gd" id="1_pivkh"]
+[ext_resource type="PackedScene" uid="uid://dmp1k4v32ecjp" path="res://3d/imports/ceilingTiles/ceilingLight.glb" id="1_y8jia"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_m0sj5"]
+properties/0/path = NodePath("ceilingLight/AnimationPlayer:current_animation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="ceilingLight" type="Node3D"]
+script = ExtResource("1_pivkh")
+
+[node name="ceilingLight" parent="." instance=ExtResource("1_y8jia")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+spot_range = 9.42826
+spot_angle = 46.8009
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_m0sj5")
+
+[editable path="ceilingLight"]

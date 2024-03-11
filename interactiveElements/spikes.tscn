@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8fmaldnalttx"]
+
+[ext_resource type="PackedScene" uid="uid://boewym0j3oyfh" path="res://3d/imports/spikes/spikes.glb" id="1_obb11"]
+
+[node name="spikes" type="Node3D"]
+
+[node name="spikes" parent="." instance=ExtResource("1_obb11")]
